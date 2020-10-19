@@ -1,0 +1,47 @@
+---
+title: "flex_dashboard_test"
+author: "G. Conway"
+knit: (function(inputFile, encoding) {
+      out_dir <- 'docs';
+      rmarkdown::render(inputFile,
+                        encoding=encoding,
+                        output_file=file.path(dirname(inputFile), out_dir, 'index.html')) })
+output:
+  flexdashboard::flex_dashboard:
+    orientation: column
+    vertical_layout: fill
+    theme: yeti
+---
+
+HOME
+=======================================================================
+
+This is the home page for this test case.
+
+Page 1 {data-navmenu="Plots"}
+=======================================================================
+
+Show a dropdown (pg 1)
+
+Page 2 {data-navmenu="Plots"}
+=======================================================================
+
+Show another dropdown (pg 2)
+
+
+NewPage
+=======================================================================
+
+Column
+-----------------------------------------------------------------------
+
+### Left pane
+
+New page with a section
+
+Column
+-----------------------------------------------------------------------
+
+### Right pane
+
+New page with another section
