@@ -16,32 +16,72 @@ output:
 HOME
 =======================================================================
 
-This is the home page for this test case.
+***This is the home page for this test case with flexdashboards.***
 
-Page 1 {data-navmenu="Plots"}
+Petal Width {data-navmenu="Plots"}
 =======================================================================
 
-Show a dropdown (pg 1)
 
-Page 2 {data-navmenu="Plots"}
+### Petal Width Count by Species
+```{r}
+data("iris")
+
+library(tidyverse)
+library(plotly)
+
+ggplotly(ggplot(iris, aes(Petal.Width, color = Species)) +
+  geom_bar())
+```
+
+Petal Length {data-navmenu="Plots"}
 =======================================================================
 
-Show another dropdown (pg 2)
+
+### Petal Length Count by Species
+```{r}
+ggplotly(ggplot(iris, aes(Petal.Length, color = Species)) +
+  geom_bar())
+```
 
 
-NewPage
+Sample Data
 =======================================================================
 
 Column
 -----------------------------------------------------------------------
 
-### Left pane
+### Number of samples per species
 
-New page with a section
+```{r}
+table(iris$Species)
+```
+
 
 Column
 -----------------------------------------------------------------------
 
-### Right pane
+### Showing latex formulas
 
-New page with another section
+$A + B = C$
+
+<br>
+
+$\frac{1}{C} = some value$
+
+<br> 
+
+$\hat{Y} = \beta_0 + \beta_1X_1 + \beta_2X_2$
+
+
+### Section showing a code block
+```{r, echo = T, eval = F}
+a <- 2 + 2
+
+b <- function(x){
+  print(x^2)
+}
+
+b(a)
+
+rm(a, b) # clean memory
+```
